@@ -34,6 +34,8 @@ Interactive table for coviddrugs.org
 
 - [`stylesheet.css`](stylesheet.css) consists the styling for different DOM elements
 
-- To change permissions for Google Sheets API access, please visit [Developer Console](https://console.developers.google.com/apis/credentials?authuser=1&folder=&organizationId=&project=quickstart-1589347900568). You must be logged into **covid19review** in order to access the console.
+- The table is displayed with the Tabulator library. For reference, see the [documentation](http://tabulator.info/docs/4.6/layout).
+
+* To change permissions for Google Sheets API access, please visit [Developer Console](https://console.developers.google.com/apis/credentials?authuser=1&folder=&organizationId=&project=quickstart-1589347900568). You must be logged into **covid19review** in order to access the console.
   - Change client ID access by clicking on the edit button for the _"OAuth client"_ under OAuth 2.0 Client IDs or click [here](https://console.developers.google.com/apis/credentials/oauthclient/1059571606840-htaveei63vm396kqssjulqbnpfra4mdq.apps.googleusercontent.com?authuser=1&project=quickstart-1589347900568)
   - Change API key access by clicking on the edit button for the _"API key"_ under API keys or click [here](https://console.developers.google.com/apis/credentials/key/352f626b-f719-47cd-bfb0-57c57560e0f8?authuser=1&project=quickstart-1589347900568)
