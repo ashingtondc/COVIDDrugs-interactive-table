@@ -13,6 +13,23 @@ var DISCOVERY_DOCS = [
 // included, separated by spaces.
 var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
 
+/** Default columns shown on initial load. Add or remove column names here exactly as
+ * they appear on the google sheets to change what columns should be shown by default.
+ */
+const DEFAULT_COLUMNS = [
+  "Title",
+  "Disease",
+  "Study design",
+  "Total number of patients/subjects",
+  "Intervention",
+  "Outpts vs non-ICU vs ICU",
+  "Mild-moderate or severe disease",
+  "Primary outcome",
+  "Secondary outcome",
+  "Results",
+  "Conclusion",
+];
+
 window.onload = function () {
   handleClientLoad();
   initializeFiltersPanel();
@@ -117,6 +134,7 @@ function populateCheckBoxes(table) {
       addCheckBox(column.title);
     });
   }
+  applyFilters();
 }
 
 /** Helper function for `populateCheckBoxes()` which
@@ -124,7 +142,11 @@ function populateCheckBoxes(table) {
 function addCheckBox(columnName) {
   let filters = document.getElementById("colFilters");
   let box = document.createElement("input");
-  box.checked = true;
+  if (DEFAULT_COLUMNS.indexOf(columnName) > -1) {
+    box.checked = true;
+  } else {
+    box.checked = false;
+  }
   box.setAttribute("type", "checkbox");
   box.setAttribute("class", "colCheck");
   box.setAttribute("value", columnName);
