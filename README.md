@@ -26,6 +26,9 @@ Interactive table for coviddrugs.org
     uncheck column names to do this.
   - To change the default column width, change the `column.width = x` property in main.js in
     function `displayTable()` or do it when looking the table by moving the dividers.
+  - On initial load, default columns shown are hardcoded in the static variable `DEFAULT_COLUMNS`.g
+  - To line wrap a column instead of truncating it with ..., change its formatter to be "textarea"
+    similiar to what is done in `displayTable()` for column "Title".
 
 - [`index.html`](index.html) consists the HTML skeleton for the interactive table and filters panel
 

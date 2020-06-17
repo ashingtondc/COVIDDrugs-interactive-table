@@ -117,8 +117,11 @@ function displayTable(data) {
     column.headerFilter = true;
     column.tooltip = true;
     column.width = "10%";
-    if (column.title == "Title") {
+    if (column.title === "Title") {
       column.frozen = true;
+      // To line wrap instead of truncate, change formatter's value for the column to
+      // be textarea.
+      column.formatter = "textarea";
     }
   });
   table.setColumns(columns);
